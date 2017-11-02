@@ -47,10 +47,11 @@
         android:id="@+id/buttonAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ajouter"
-        android:layout_marginBottom="28dp"
         android:layout_below="@+id/editFournisseur"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:onClick="ajouter"
+        android:text="Ajouter" />
 
     <EditText
         android:id="@+id/editFournisseur"

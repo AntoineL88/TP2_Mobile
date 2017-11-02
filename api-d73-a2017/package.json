@@ -28,26 +28,26 @@
     "mocha": "mocha test/ --recursive"
   },
   "dependencies": {
-    "body-parser": "^1.18.1",
-    "compression": "^1.7.0",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
     "cors": "^2.8.4",
-    "feathers": "^2.2.0",
-    "feathers-configuration": "^0.4.1",
+    "feathers": "^2.2.3",
+    "feathers-configuration": "^0.4.2",
     "feathers-errors": "^2.9.2",
-    "feathers-hooks": "^2.0.2",
-    "feathers-hooks-common": "^3.7.3",
+    "feathers-hooks": "^2.1.2",
+    "feathers-hooks-common": "^3.10.0",
     "feathers-nedb": "^2.7.0",
-    "feathers-rest": "^1.8.0",
-    "feathers-schema": "^0.2.3",
-    "helmet": "^3.8.1",
+    "feathers-rest": "^1.8.1",
+    "feathers-schema": "^0.2.5",
+    "helmet": "^3.9.0",
     "nedb": "^1.8.0",
-    "serve-favicon": "^2.4.4",
-    "winston": "^2.3.1"
+    "serve-favicon": "^2.4.5",
+    "winston": "^2.4.0"
   },
   "devDependencies": {
-    "eslint": "^4.7.1",
+    "eslint": "^4.10.0",
     "mocha": "^3.5.3",
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }
