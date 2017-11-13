@@ -1,6 +1,8 @@
 package com.example.e1363135.autopartsmobile;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,7 +26,15 @@ public class ProduitsAffichage extends OptionMenu {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produits);
 
+
         listViewProduits = (ListView) findViewById(R.id.listProduits);
+        listViewProduits.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                return false;
+            }
+        });
     }
 
     @Override
@@ -42,12 +52,17 @@ public class ProduitsAffichage extends OptionMenu {
                     @Override
                     public void onResponse(JSONObject response) {
                         try{
-                            ArrayList<String> listProducts = new ArrayList<String>();
+                            ArrayList<Products> listProducts = new ArrayList<Products>();
                             JSONArray data = response.getJSONArray("data");
                             for (int i = 0; i < data.length(); i++){
-                                listProducts.add(data.getJSONObject(i).getString("code") + " " + data.getJSONObject(i).getString("name") + " " + data.getJSONObject(i).getString("price"));
+                                Products produit = new Products(data.getJSONObject(i).getString("_id"),
+                                        data.getJSONObject(i).getString("code"),
+                                        data.getJSONObject(i).getString("name"),
+                                        data.getJSONObject(i).getInt("price"),
+                                        data.getJSONObject(i).getString("supplier"));
+                                listProducts.add(produit);
                             }
-                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(ProduitsAffichage.this, android.R.layout.simple_list_item_1, listProducts);
+                            ArrayAdapter<Products> adapter = new ArrayAdapter<Products>(ProduitsAffichage.this, android.R.layout.simple_list_item_1, listProducts);
                             listViewProduits.setAdapter(adapter);
                         } catch(JSONException j) {
 

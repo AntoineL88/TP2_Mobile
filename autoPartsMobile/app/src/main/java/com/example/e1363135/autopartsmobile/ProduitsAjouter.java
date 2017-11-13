@@ -8,10 +8,10 @@ import android.widget.EditText;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProduitsAjouter extends OptionMenu {
     EditText editCode,editName,editPrice,editFournisseur;
@@ -41,34 +41,30 @@ public class ProduitsAjouter extends OptionMenu {
 
     protected void newProduct() {
         String url = "http://10.0.2.2:3033/products";
-        JSONObject product = new JSONObject();
-        try{
-
-            product.put("code", editCode.getText().toString());
-            product.put("name", editName.getText().toString());
-            product.put("price", editPrice.getText().toString());
-            product.put("suppliers", editFournisseur.getText().toString());
-
-
-
-        } catch (JSONException j) {}
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.POST, url, product, new Response.Listener<JSONObject>() {
-
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(String response) {
 
                     }
                 }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
 
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-
-                    }
-                });
-
+                }
+            }
+        ){
+            @Override
+           protected Map<String, String> getParams(){
+               Map<String, String> product = new HashMap<String, String>();
+               product.put("code", editCode.getText().toString());
+               product.put("name", editName.getText().toString());
+               product.put("price", editPrice.getText().toString());
+               product.put("supplier", editFournisseur.getText().toString());
+               return product;
+           }
+        };
         // Access the RequestQueue through your singleton class.
-        MySingleton.getInstance(this).addToRequestQueue(jsObjRequest);
+        MySingleton.getInstance(this).addToRequestQueue(postRequest);
     }
 }

@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".ProduitsAffichage" />
         <activity android:name=".ProduitsAjouter" />
-        <activity android:name=".OptionMenu"></activity>
+        <activity android:name=".OptionMenu" />
     </application>
 
 </manifest>
