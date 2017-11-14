@@ -5,40 +5,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.e1363135.autopartsmobile.Produits.ProduitsAjouter">
-
-    <EditText
-        android:id="@+id/editCode"
-        android:hint="Code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="" />
+    tools:context="com.example.e1363135.autopartsmobile.Fournisseurs.FournisseursAjouter">
 
     <EditText
         android:id="@+id/editName"
         android:hint="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editCode"
-        android:layout_below="@+id/editCode"
-        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="" />
 
     <EditText
-        android:id="@+id/editPrice"
-        android:hint="Price"
+        android:id="@+id/editAddress_Street"
+        android:hint="Address_Street"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editName"
+        android:layout_alignEnd="@+id/editName"
         android:layout_below="@+id/editName"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/editAddress_Province"
+        android:hint="Address_Province"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editAddress_City"
+        android:layout_below="@+id/editAddress_City"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="" />
@@ -47,22 +47,35 @@
         android:id="@+id/buttonAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerFournisseur"
+        android:layout_below="@+id/editAddress_Postal_Code"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-
         android:layout_marginBottom="28dp"
+        android:layout_marginTop="30dp"
         android:onClick="ajouter"
         android:text="Ajouter" />
 
-    <Spinner
-        android:id="@+id/spinnerFournisseur"
+    <EditText
+        android:id="@+id/editAddress_City"
+        android:hint="Address_City"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        android:layout_below="@+id/editPrice"
-        android:layout_alignStart="@+id/editPrice" />
+        android:layout_below="@+id/editAddress_Street"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/editAddress_Postal_Code"
+        android:hint="Address_Postal_Code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_below="@+id/editAddress_Province"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

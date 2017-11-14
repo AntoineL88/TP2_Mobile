@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.e1363135.autopartsmobile.Produits.ProduitsAffichage">
+    tools:context="com.example.e1363135.autopartsmobile.Fournisseurs.FournisseursAffichage">
 
     <ListView
-        android:id="@+id/listViewProduits"
+        android:id="@+id/listViewFournisseurs"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_below="@+id/textView2"
@@ -23,5 +23,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:textSize="30dp"
-        android:text="Liste Produits" />
+        android:text="Liste Fournisseurs" />
+
 </RelativeLayout>

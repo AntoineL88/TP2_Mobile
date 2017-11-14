@@ -5,8 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <item
-        android:id="@+id/action_Ajouter"
-        android:title="Ajouter"
+        android:id="@+id/action_Accueil"
+        android:title="Accueil"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_AjouterProduit"
+        android:title="Ajouter Produit"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_AjouterFournisseur"
+        android:title="Ajouter Fournisseur"
         android:orderInCategory="100"
         app:showAsAction="never" />
 </menu>

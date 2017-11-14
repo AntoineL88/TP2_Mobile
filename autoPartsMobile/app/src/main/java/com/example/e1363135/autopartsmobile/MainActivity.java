@@ -10,18 +10,18 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.e1363135.autopartsmobile.Fournisseurs.FournisseursAffichage;
+import com.example.e1363135.autopartsmobile.Produits.ProduitsAffichage;
 
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends OptionMenu {
 
-    TextView mTxtDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mTxtDisplay = (TextView) findViewById(R.id.textView);
     }
 
     public void goToProduits(View view) {
@@ -29,33 +29,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(produits);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        this.getAllProducts();
+    public void goToFournisseurs(View view) {
+        Intent fournisseurs = new Intent(MainActivity.this, FournisseursAffichage.class);
+        startActivity(fournisseurs);
     }
 
-    protected void getAllProducts() {
-        String url = "http://10.0.2.2:3033/products";
 
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        mTxtDisplay.setText("Response: " + response.toString());
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-                        mTxtDisplay.setText("Response: " + error.toString());
-                    }
-                });
-
-// Access the RequestQueue through your singleton class.
-        MySingleton.getInstance(this).addToRequestQueue(jsObjRequest);
-    }
 }
 

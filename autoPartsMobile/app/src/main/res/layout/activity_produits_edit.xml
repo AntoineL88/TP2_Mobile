@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.e1363135.autopartsmobile.Produits.ProduitsAjouter">
+    tools:context="com.example.e1363135.autopartsmobile.Produits.ProduitsEdit">
 
     <EditText
         android:id="@+id/editCode"
@@ -44,16 +44,15 @@
         android:text="" />
 
     <Button
-        android:id="@+id/buttonAdd"
+        android:id="@+id/buttonModifier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinnerFournisseur"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
-
         android:layout_marginBottom="28dp"
-        android:onClick="ajouter"
-        android:text="Ajouter" />
+        android:onClick="modifier"
+        android:text="Modifier" />
 
     <Spinner
         android:id="@+id/spinnerFournisseur"
@@ -65,4 +64,5 @@
         android:text=""
         android:layout_below="@+id/editPrice"
         android:layout_alignStart="@+id/editPrice" />
+
 </RelativeLayout>

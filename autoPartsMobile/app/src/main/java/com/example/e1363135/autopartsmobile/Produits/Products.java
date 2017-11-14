@@ -1,4 +1,4 @@
-package com.example.e1363135.autopartsmobile;
+package com.example.e1363135.autopartsmobile.Produits;
 
 public class Products {
     public String _id;
@@ -6,7 +6,7 @@ public class Products {
 
     public Products(String _id, String code, String name, int price, String supplier) {
         this._id = _id;
-        this.produitAfficher = code + " " + " " + name + " " + price + " " + supplier;
+        this.produitAfficher = "Code: " + code + ", Nom: " + name + ", Prix: " + price + ", Fournisseur: " + supplier;
     }
 
     @Override

@@ -18,9 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProduitsAffichage" />
-        <activity android:name=".ProduitsAjouter" />
+        <activity android:name=".Produits.ProduitsAffichage" />
+        <activity android:name=".Produits.ProduitsAjouter" />
         <activity android:name=".OptionMenu" />
+        <activity android:name=".Produits.ProduitsEdit" />
+        <activity android:name=".ProduitsDelete" />
+        <activity android:name=".Fournisseurs.FournisseursAffichage" />
+        <activity android:name=".Fournisseurs.FournisseursEdit" />
+        <activity android:name=".Fournisseurs.FournisseursAjouter"></activity>
     </application>
 
 </manifest>
