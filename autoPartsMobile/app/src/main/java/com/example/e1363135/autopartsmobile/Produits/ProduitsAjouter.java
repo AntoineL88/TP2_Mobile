@@ -6,14 +6,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
-import com.example.e1363135.autopartsmobile.Fournisseurs.FournisseursAffichage;
-import com.example.e1363135.autopartsmobile.Fournisseurs.Suppliers;
 import com.example.e1363135.autopartsmobile.MySingleton;
 import com.example.e1363135.autopartsmobile.OptionMenu;
 import com.example.e1363135.autopartsmobile.R;
@@ -57,7 +56,6 @@ public class ProduitsAjouter extends OptionMenu {
                     @Override
                     public void onResponse(JSONObject response) {
                         try{
-
                             JSONArray data = response.getJSONArray("data");
                             for (int i = 0; i < data.length(); i++){
                                 String supplier = data.getJSONObject(i).getString("name");
@@ -83,9 +81,15 @@ public class ProduitsAjouter extends OptionMenu {
     }
 
     protected void ajouter(View vue){
-        newProduct();
-        Intent produits = new Intent(ProduitsAjouter.this, ProduitsAffichage.class);
-        startActivity(produits);
+        String text = editPrice.getText().toString();
+        try {
+            int num = Integer.parseInt(text);
+            newProduct();
+            Intent produits = new Intent(ProduitsAjouter.this, ProduitsAffichage.class);
+            startActivity(produits);
+        } catch (NumberFormatException e) {
+            Toast toast = Toast.makeText(getBaseContext(), "Veuillez entrer un nombre pour le prix", Toast.LENGTH_LONG);
+            toast.show();        }
     }
 
     protected void newProduct() {

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -114,9 +115,16 @@ public class ProduitsEdit extends OptionMenu {
     }
 
     protected void modifier(View vue){
-        editProduct();
-        Intent produits = new Intent(ProduitsEdit.this, ProduitsAffichage.class);
-        startActivity(produits);
+        String text = editPrice.getText().toString();
+        try {
+            int num = Integer.parseInt(text);
+            editProduct();
+            Intent produits = new Intent(ProduitsEdit.this, ProduitsAffichage.class);
+            startActivity(produits);
+        } catch (NumberFormatException e) {
+           Toast toast = Toast.makeText(getBaseContext(), "Veuillez entrer un nombre pour le prix", Toast.LENGTH_LONG);
+           toast.show();
+        }
     }
 
     protected void editProduct() {
